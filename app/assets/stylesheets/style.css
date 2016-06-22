@@ -1,0 +1,12 @@
+.green-background {
+  background-color: #66b84b;
+  color: white;
+}
+
+.green-background .navbar-brand{
+  color: white;
+}
+
+.yellow-font a{
+  color: #f4ec88 !important;
+}
