@@ -1,3 +1,19 @@
+#home-banner {
+  background-image: url('meal-home.jpg');
+  background-size: cover;
+  height: 90vh;
+  margin-top: -1.4em;
+}
+
+#home-banner::before{
+  background-color: rgba(0, 0, 0, 0.37);
+  content: '';
+  display: block;
+  height: 90%;
+  position: absolute;
+  width: 97.6%;
+}
+
 .green-background {
   background-color: #66b84b;
   color: white;
