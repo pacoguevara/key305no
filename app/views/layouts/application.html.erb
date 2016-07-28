@@ -9,7 +9,11 @@
 </head>
 <body>
   <div class="container-fluid">
-    <%= render 'layouts/header'%>
+    <% if user_signed_in? %>
+      <%= render 'layouts/header_logged'%>
+    <% else %>
+      <%= render 'layouts/header'%>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer'%>
   </div>
