@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col m3 offset-m5 s8 offset-s2">
+    <h3>Pacientes</h3>
+  </div>
+  <div class="col m2">
+    <a class="btn-floating btn-large waves-effect waves-light red add-patient">
+      <i class="fa fa-plus"></i>
+    </a>
+  </div>
+</div>
+<section id="patients-container">
+  <% if @patients.blank? %>
+  <div class="row">
+    <div class="col m3 offset-m4 s12">
+      <i>No ha agregado ningún paciente aún</i>
+    </div>
+  </div>
+  <% end %>
+</section>
