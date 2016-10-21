@@ -3,7 +3,7 @@
     <h3>Pacientes</h3>
   </div>
   <div class="col m2">
-    <a class="btn-floating btn-large waves-effect waves-light red add-patient">
+    <a class="btn-floating btn-large waves-effect waves-light red add-patient btn modal-trigger" href="#new-patient-form">
       <i class="fa fa-plus"></i>
     </a>
   </div>
@@ -17,3 +17,9 @@
   </div>
   <% end %>
 </section>
+<%= render "new_patient_form" %>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.modal-trigger').leanModal();
+});
+</script>
