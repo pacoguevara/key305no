@@ -13,4 +13,4 @@ gem 'sass-rails', '>= 3.2'
 gem 'pg'
 gem "better_errors"
 gem 'devise'
-gem 'pry', '~> 0.10.4', group: :development
+gem 'pry-rails', :group => :development
