@@ -11,12 +11,17 @@ Patient = (function(){
   }
 
   var hdlSaveNewPatient = function(){
-    var firstName = $('#first_name').val();
-    var lastName = $('#last_name').val();
-    var email = $('#email').val();
-    var phone = $('#phone').val();
-    var address = $('#address').val();
-    console.log(firstName+lastName+email+phone+address);
+    var formValues = getNewPatientFormValues();
+  }
+
+  var getNewPatientFormValues = function(){
+    var formValues = new Object();
+    formValues.firstName = $('#first_name').val();
+    formValues.lastName = $('#last_name').val();
+    formValues.email = $('#email').val();
+    formValues.phone = $('#phone').val();
+    formValues.address = $('#address').val();
+    return formValues;
   }
 
   return {
