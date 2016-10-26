@@ -7,11 +7,12 @@ Rails.application.routes.draw do
 
   # Users Controller
   get 'patients' => 'users#patients'
+  post 'new_patient' => 'users#new_patient'
 
   # API V1
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
-      resources :users 
+      resources :users
     end
   end
 end
