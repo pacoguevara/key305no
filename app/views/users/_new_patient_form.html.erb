@@ -3,37 +3,40 @@
   <div class="modal-content">
     <h4>Nuevo paciente</h4>
     <div class="row">
-      <div class="row">
-        <div class="input-field col m6 s12">
-          <label for="">Nombre</label><br />
-          <input type="text" name="first_name" id="first_name">
+      <form class="" action="<%= new_patient_path() %>" method="post">
+        <div class="row">
+          <div class="input-field col m6 s12">
+            <label for="">Nombre</label><br />
+            <input type="text" name="first_name" id="first_name" class="validate">
+          </div>
+          <div class="input-field col m6 s12">
+            <label for="">Apellido</label><br />
+            <input type="text" name="last_name" id="last_name" class="validate">
+          </div>
         </div>
-        <div class="input-field col m6 s12">
-          <label for="">Apellido</label><br />
-          <input type="text" name="last_name" id="last_name">
+        <div class="row">
+          <div class="input-field col m6 s12">
+            <label for="">Email</label><br />
+            <input type="email" name="email" id="email" class="validate">
+          </div>
+          <div class="input-field col m6 s12">
+            <label for="">Teléfono</label><br />
+            <input type="text" name="phone" id="phone">
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col m6 s12">
-          <label for="">Email</label><br />
-          <input type="email" name="email" id="email">
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="">Dirección</label><br />
+            <input type="text" name="address" id="address">
+            <input type="hidden" name="role" id="role" value="patient">
+          </div>
         </div>
-        <div class="input-field col m6 s12">
-          <label for="">Teléfono</label><br />
-          <input type="text" name="phone" id="phone">
+        <div class="row">
+          <div class="actions col s12">
+            <button type="submit" name="button" class="btn cyan waves-effect waves-light right">Guardar</button>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <label for="">Dirección</label><br />
-          <input type="text" name="address" id="address">
-        </div>
-      </div>
-      <div class="row">
-        <div class="actions col s12">
-          <button type="button" name="button" class="btn cyan waves-effect waves-light right" id="save-new-patient">Guardar</button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
   <div class="modal-footer">
