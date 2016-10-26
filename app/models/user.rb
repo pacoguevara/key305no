@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
     return nil if role == 'patient'
     patients = clinic.patients
   end
+
+  def full_name
+    first_name+" "+last_name
+  end
 end
