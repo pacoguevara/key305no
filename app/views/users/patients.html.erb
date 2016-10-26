@@ -10,11 +10,30 @@
 </div>
 <section id="patients-container">
   <% if @patients.blank? %>
-  <div class="row">
-    <div class="col m3 offset-m4 s12">
-      <i>No ha agregado ningún paciente aún</i>
+    <div class="row">
+      <div class="col m3 offset-m4 s12">
+        <i>No ha agregado ningún paciente aún</i>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="row">
+      <% @patients.each do |patient| %>
+        <div class="col s4 m2">
+          <div class="card">
+            <div class="card-image">
+              <%= image_tag 'user.png', style: "width: 100%" %>
+              <span class="card-title"><%= patient.full_name %></span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </section>
 <%= render "new_patient_form" %>
