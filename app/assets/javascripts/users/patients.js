@@ -12,12 +12,16 @@ Patient = (function(){
 
   var hdlSaveNewPatient = function(){
     var formValues = getNewPatientFormValues();
+    User.newPatient(formValues,
+      function(){console.log(response);},
+      function(){console.log("Ocurrió un error");}
+    )
   }
 
   var getNewPatientFormValues = function(){
     var formValues = new Object();
-    formValues.firstName = $('#first_name').val();
-    formValues.lastName = $('#last_name').val();
+    formValues.first_name = $('#first_name').val();
+    formValues.last_name = $('#last_name').val();
     formValues.email = $('#email').val();
     formValues.phone = $('#phone').val();
     formValues.address = $('#address').val();
