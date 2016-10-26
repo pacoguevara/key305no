@@ -4,6 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :clinic
+  validates :nutritionist_id, :presence => true, if: :patient?
+
+  validates :email, uniqueness: true
+  validates :email, :presence => true
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
 
   def patients
     return nil if role == 'patient'
