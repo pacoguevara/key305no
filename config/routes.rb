@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'prueba' => 'pages#prueba'
 
   # Users Controller
+  resources :users
   get 'patients' => 'users#patients'
   post 'new_patient' => 'users#new_patient'
 
