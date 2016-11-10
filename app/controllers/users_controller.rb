@@ -16,4 +16,8 @@ class UsersController < ApplicationController
     params.permit(:first_name, :last_name, :email,
     :phone, :address, :role, :clinic_id, :password, :role, :nutritionist_id)
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
 end
