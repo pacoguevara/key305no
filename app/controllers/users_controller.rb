@@ -12,12 +12,21 @@ class UsersController < ApplicationController
     redirect_to :back
   end
 
-  def user_params
+  def user_params(params=params)
     params.permit(:first_name, :last_name, :email,
     :phone, :address, :role, :clinic_id, :password, :role, :nutritionist_id)
   end
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    if user.update(user_params(params[:user]))
+      redirect_to(patients_path, notice: 'Paciente modificado con éxito')
+    else
+      redirect_to(:back, notice: 'Ocurrió un error al intentar modificar el registro')
+    end
   end
 end
