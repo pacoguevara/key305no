@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def set_inactive
-    binding.pry
     user = User.find(params[:id])
     user.update_attributes(active: false)
     redirect_to patients_path()
