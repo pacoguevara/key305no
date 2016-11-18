@@ -14,11 +14,19 @@ class UsersController < ApplicationController
 
   def user_params(params=params)
     params.permit(:first_name, :last_name, :email,
-    :phone, :address, :role, :clinic_id, :password, :role, :nutritionist_id)
+    :phone, :address, :role, :clinic_id, :password, :role, :nutritionist_id,
+    :active)
   end
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  def set_inactive
+    binding.pry
+    user = User.find(params[:id])
+    user.update_attributes(active: false)
+    redirect_to patients_path()
   end
 
   def update
