@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users
   get 'patients' => 'users#patients'
   post 'new_patient' => 'users#new_patient'
+  put 'set_inactive/:id' => 'users#set_inactive'
 
   # API V1
   namespace :api, defaults: {format: 'json'} do
