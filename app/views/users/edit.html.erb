@@ -41,7 +41,11 @@
             </div>
 
             <div class="row">
-              <div class="actions col s12">
+              <div class="col m6 s12">
+                <%= link_to 'Eliminar', "/set_inactive/#{@user.id}",
+            data: {:confirm => 'Este seguro que desea eliminar al paciente?'}, :method => :put %>
+              </div>
+              <div class="actions col m6 s12">
                 <%= f.submit "Guardar", class: "btn cyan waves-effect waves-light right" %>
               </div>
             </div>
