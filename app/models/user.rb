@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   def patients
     return nil if role == 'patient'
-    User.where(nutritionist_id: id).order(:first_name)
+    User.where(nutritionist_id: id, active: true).order(:first_name)
   end
 
   def full_name
