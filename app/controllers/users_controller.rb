@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def set_inactive
     user = User.find(params[:id])
     user.update_attributes(active: false)
-    redirect_to patients_path()
+    redirect_to patients_path, notice: 'Paciente eliminado'
   end
 
   def update

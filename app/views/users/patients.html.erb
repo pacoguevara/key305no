@@ -27,7 +27,10 @@
             <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.</p>
             </div>
+
             <div class="card-action">
+              <%= link_to 'Eliminar', "/set_inactive/#{patient.id}",
+            data: {:confirm => 'Este seguro que desea eliminar al paciente?'}, :method => :put %>
               <a href="<%= edit_user_path(patient.id) %>">Editar</a>
             </div>
           </div>
